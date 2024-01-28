@@ -22,7 +22,6 @@ COPY --from=build /tacacs /tacacs
 COPY --from=build /entrypoint.sh /entrypoint.sh
 COPY --from=build /event-driven-servers/tac_plus-ng/sample/tac_plus-ng.cfg $CONF_FILE
 COPY --from=build /tacacs/lib/mavis/mavis_tacplus_ldap.pl /usr/local/lib/mavis/mavis_tacplus_ldap.pl
-
 RUN apk add --no-cache perl perl-digest-md5 perl-ldap pcre-dev && \
     chmod u+x /entrypoint.sh
 EXPOSE 49
